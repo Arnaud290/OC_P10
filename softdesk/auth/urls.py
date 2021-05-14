@@ -22,7 +22,7 @@ urlpatterns = [
         name='auth_register'
     ),
     path(
-        'change_password/<int:pk>',
+        'change_password/',
         views.ChangePasswordView.as_view(),
         name='auth_change_password'
     ),

@@ -33,6 +33,9 @@ class ChangePasswordView(generics.UpdateAPIView):
     permission_classes = [IsAuthenticated]
     serializer_class = serializers.ChangePasswordSerializer
 
+    def get_object(self):
+        return User.objects.get(pk=self.request.user.id)
+
 
 class LogoutView(APIView):
     """Disconnection View Class"""

@@ -145,7 +145,7 @@ These projects can have multiple collaborators and project related issues can be
         Return: TOKEN 'access' key (To be used for requests with authentication, valid for 1 hour)
                  TOKEN 'refresh' key (To be used for refresh and logout requests)
 
-    - PUT: http://127.0.0.1:8000/change_password/{user_id}
+    - PUT: http://127.0.0.1:8000/change_password/
 
         Authentication required
         Allows the password to be changed
@@ -401,7 +401,7 @@ Ces projets peuvent avoir plusieurs collaborateurs et des problèmes liés aux p
         Retour : Clé TOKEN 'access' (A utiliser pour les requêtes avec authentification, valable 1 heure)
                  Clé TOKEN 'refresh' (A utiliser pour les requêtes refresh et logout)
 
-    - PUT : http://127.0.0.1:8000/change_password/{id_de_l_utilisateur}
+    - PUT : http://127.0.0.1:8000/change_password/
 
         Authentification requis
         Permet le changement du password
