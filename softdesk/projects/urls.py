@@ -28,7 +28,7 @@ urlpatterns = [
         views.IssueDetail.as_view()
     ),
     path(
-        '<int:project_id>/issues/<int:issue_id>/comments',
+        '<int:project_id>/issues/<int:issue_id>/comments/',
         views.CommentList.as_view()
     ),
     path(
