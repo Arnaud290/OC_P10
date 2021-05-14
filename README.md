@@ -104,7 +104,7 @@ Ces projets peuvent avoir plusieurs collaborateurs et des problèmes liés aux p
 
                 ./manage.py migrate => Création des tables dans le fichier "db.sqlite" (crée directement)
               
-####  3 - Utilisation des requêtes
+###  3 - Utilisation des requêtes
 
     Plusieurs méthodes existe pour effectuer des requêtes, exemple :
 
@@ -125,7 +125,7 @@ Ces projets peuvent avoir plusieurs collaborateurs et des problèmes liés aux p
                 curl --location --request GET 'http://127.0.0.1:8000/projects' \
                 --header 'Authorization: Bearer 'CLE TOKEN 'access''
 
-####  4 - Liste des requêtes   
+###  4 - Liste des requêtes   
 
     La documentation détaillé est disponible sur : '' 
 
