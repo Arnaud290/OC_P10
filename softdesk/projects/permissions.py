@@ -1,6 +1,4 @@
-"""
-Permissions module
-"""
+"""Permissions module"""
 from rest_framework import permissions
 from .services_permissions import (
     get_contributors_project,
@@ -15,8 +13,10 @@ class IsAuthorProjectOrContributorReadOnly(permissions.BasePermission):
 
 
 class IsAuthorObjectOrContributorReadOnly(permissions.BasePermission):
-    """The Author of the object (issue, comment) can modify.
-    Contributors of the corresponding project can read."""
+    """
+    The Author of the object (issue, comment) can modify.
+    Contributors of the corresponding project can read.
+    """
     def has_object_permission(self, request, view, obj):
         return permission_method(request, obj)
 

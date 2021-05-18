@@ -1,6 +1,4 @@
-"""
-Constant choice of models module
-"""
+"""Constant choice of models module"""
 
 PRIORITY_CHOICES = [
     ('LOW', 'LOW'),

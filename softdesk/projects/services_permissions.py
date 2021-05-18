@@ -1,11 +1,14 @@
+"""Services permissions module"""
 from django.http import Http404
 from rest_framework import permissions
 from .models import Project, Contributor
 
 
 def get_project(request):
-    """Return function of the project according
-    to the number "pk" or 'project_id' of the url"""
+    """
+    Return function of the project according
+    to the number "pk" or 'project_id' of the url
+    """
     try:
         project_id = request.parser_context["kwargs"]["project_id"]
     except KeyError:
@@ -18,8 +21,10 @@ def get_project(request):
 
 
 def get_contributors_project(request):
-    """Return function of the list of
-    contributors of a project"""
+    """
+    Return function of the list of
+    contributors of a project
+    """
     contributors = [
         user.user_id for user in Contributor.objects.filter(
             project_id=get_project(request)
@@ -30,8 +35,10 @@ def get_contributors_project(request):
 
 
 def permission_method(request, obj=None):
-    """Return function of the read or write persmission
-    method according to an object or a project number"""
+    """
+    Return function of the read or write persmission
+    method according to an object or a project number
+    """
     if request.method in permissions.SAFE_METHODS:
         return get_contributors_project(request)
     if obj:

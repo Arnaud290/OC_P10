@@ -1,6 +1,4 @@
-"""
-Services module for views
-"""
+"""Services module for views"""
 from rest_framework.response import Response
 from rest_framework.exceptions import ValidationError
 from django.contrib.auth.models import User
@@ -18,8 +16,10 @@ def users_list_id(self):
 
 
 def serializer_method(self, model):
-    """Returns the serialization method
-    to use (list or detail)"""
+    """
+    Returns the serialization method
+    to use (list or detail)
+    """
     get_serializer = 'serializers.' + model + 'ListSerializer'
     post_serializer = 'serializers.' + model + 'Serializer'
     if self.request.method == 'GET':
@@ -36,8 +36,10 @@ def queryset_filter(self, obj):
 
 
 def create_project(self, serializer):
-    """Method for creating a project and automatic
-    creation of the author contributor"""
+    """
+    Method for creating a project and automatic
+    creation of the author contributor
+    """
     project = serializer.save(author_user_id=self.request.user)
     contributor = Contributor.objects.create(
         user_id=self.request.user,
@@ -48,8 +50,10 @@ def create_project(self, serializer):
 
 
 def get_contributors_projet(self):
-    """Returns the list of projects to
-    which a contributor is linked"""
+    """
+    Returns the list of projects to
+    which a contributor is linked
+    """
     contributors_list = [
         project.project_id for project in Contributor.objects.filter(
             user_id=self.request.user

@@ -1,3 +1,4 @@
+"""Projects application url management module"""
 from django.urls import path
 from rest_framework.urlpatterns import format_suffix_patterns
 from projects import views

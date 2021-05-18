@@ -1,6 +1,4 @@
-"""
-Auth application url management module
-"""
+"""Auth application url management module"""
 from django.urls import path
 from auth import views
 from rest_framework_simplejwt.views import TokenRefreshView

@@ -1,13 +1,13 @@
-"""
-Serialization module of the projects application
-"""
+"""Serialization module of the projects application"""
 from rest_framework import serializers
 from projects.models import Project, Issue, Contributor, Comment
 
 
 class ProjectSerializer(serializers.ModelSerializer):
-    """Serialization class allowing
-    the creation and view of a project"""
+    """
+    Serialization class allowing
+    the creation and view of a project
+    """
     author_user_id = serializers.ReadOnlyField(source='author_user_id.id')
 
     class Meta:
@@ -17,8 +17,10 @@ class ProjectSerializer(serializers.ModelSerializer):
 
 
 class ProjectListSerializer(serializers.ModelSerializer):
-    """Serialization class allowing
-    the view of the list of projects"""
+    """
+    Serialization class allowing
+    the view of the list of projects
+    """
     author_user_username = serializers.ReadOnlyField(
         source='author_user_id.username'
     )

@@ -1,6 +1,4 @@
-"""
-Models module of the projects application
-"""
+"""Models module of the projects application"""
 from django.db import models
 from django.contrib.auth.models import User
 from projects import models_settings
@@ -38,8 +36,10 @@ class Contributor(models.Model):
     role = models.CharField(max_length=150)
 
     class Meta:
-        """A user cannot be registered
-        several times to the same project"""
+        """
+        A user cannot be registered
+        several times to the same project
+        """
         unique_together = ['user_id', 'project_id']
 
 

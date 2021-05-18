@@ -1,6 +1,4 @@
-"""
-Logins serialization and account creation module
-"""
+"""Logins serialization and account creation module"""
 from rest_framework import serializers
 from django.contrib.auth.models import User
 from rest_framework.validators import UniqueValidator
@@ -19,8 +17,10 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
 
 
 class RegisterSerializer(serializers.ModelSerializer):
-    """Classe de serialisation de cration d'utilisateur.
-    Serialisation basée sur le model User"""
+    """
+    Classe de serialisation de cration d'utilisateur.
+    Serialisation basée sur le model User
+    """
     email = serializers.EmailField(
         required=True,
         validators=[UniqueValidator(queryset=User.objects.all())]

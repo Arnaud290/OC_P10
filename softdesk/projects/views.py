@@ -1,3 +1,4 @@
+"""Projects views module"""
 from rest_framework import generics, permissions
 from projects import serializers
 from projects.models import Project, Contributor, Issue, Comment
@@ -20,9 +21,11 @@ from projects.services_views import (
 
 
 class ProjectList(generics.ListCreateAPIView):
-    """View class of the list of projects.
+    """
+    View class of the list of projects.
     The user must be authenticated.
-    This returns the projects the user is linked to"""
+    This returns the projects the user is linked to
+    """
     serializer_class = serializers.ProjectSerializer
     permission_classes = [permissions.IsAuthenticated]
 
@@ -37,8 +40,10 @@ class ProjectList(generics.ListCreateAPIView):
 
 
 class ProjectDetail(generics.RetrieveUpdateDestroyAPIView):
-    """Class de vue de detail d'un projet,
-    l'utilisateur doit etre l'auteur du projet"""
+    """
+    Class de vue de detail d'un projet,
+    l'utilisateur doit etre l'auteur du projet
+    """
     serializer_class = serializers.ProjectSerializer
     queryset = Project.objects.all()
     permission_classes = [
@@ -52,9 +57,11 @@ class ProjectDetail(generics.RetrieveUpdateDestroyAPIView):
 
 
 class ContributorList(generics.ListCreateAPIView):
-    """View class of the list of contributors of a project.
+    """
+    View class of the list of contributors of a project.
     The user must be linked to the project to see the contributors
-    or the author of the project to add a contributor"""
+    or the author of the project to add a contributor
+    """
     serializer_class = serializers.ContributorSerializer
     queryset = Contributor.objects.all()
     permission_classes = [
@@ -73,8 +80,10 @@ class ContributorList(generics.ListCreateAPIView):
 
 
 class ContributorDelete(generics.DestroyAPIView):
-    """View class for removing contributors from a project.
-    The user must be the author of the project to delete a contributor"""
+    """
+    View class for removing contributors from a project.
+    The user must be the author of the project to delete a contributor
+    """
     serializer_class = serializers.ContributorSerializer
     permission_classes = [
         permissions.IsAuthenticated,
@@ -90,8 +99,10 @@ class ContributorDelete(generics.DestroyAPIView):
 
 
 class IssueList(generics.ListCreateAPIView):
-    """View class of the list of issues of a project.
-    The user must be a contributor to the project"""
+    """
+    View class of the list of issues of a project.
+    The user must be a contributor to the project
+    """
     queryset = Issue.objects.all()
     serializer_class = serializers.IssueSerializer
     permission_classes = [
@@ -110,8 +121,10 @@ class IssueList(generics.ListCreateAPIView):
 
 
 class IssueDetail(generics.RetrieveUpdateDestroyAPIView):
-    """Project issue detail view class.
-    The user must be the author of the issue"""
+    """
+    Project issue detail view class.
+    The user must be the author of the issue
+    """
     queryset = Issue.objects.all()
     serializer_class = serializers.IssueSerializer
     permission_classes = [
@@ -128,8 +141,10 @@ class IssueDetail(generics.RetrieveUpdateDestroyAPIView):
 
 
 class CommentList(generics.ListCreateAPIView):
-    """View class of the comments list.
-    The user must be a contributor to the project"""
+    """
+    View class of the comments list.
+    The user must be a contributor to the project
+    """
     queryset = Comment.objects.all()
     serializer_class = serializers.CommentSerializer
     permission_classes = [
@@ -148,8 +163,10 @@ class CommentList(generics.ListCreateAPIView):
 
 
 class CommentDetail(generics.RetrieveUpdateDestroyAPIView):
-    """View class detail comments.
-    The user must be the author of the comments"""
+    """
+    View class detail comments.
+    The user must be the author of the comments
+    """
     queryset = Comment.objects.all()
     serializer_class = serializers.CommentSerializer
     permission_classes = [
