@@ -124,7 +124,7 @@ These projects can have multiple collaborators and project related issues can be
 
 ### 4 - List of requests
 
-    Detailed documentation is available at: ''
+    Detailed documentation is available at: https://documenter.getpostman.com/view/15579831/TzRVg6iY
 
     - POST signup: http://127.0.0.1:8000/signup/
 
@@ -380,7 +380,7 @@ Ces projets peuvent avoir plusieurs collaborateurs et des problèmes liés aux p
 
 ###  4 - Liste des requêtes   
 
-    La documentation détaillé est disponible sur : '' 
+    La documentation détaillé est disponible sur : https://documenter.getpostman.com/view/15579831/TzRVg6iY
 
     - POST signup : http://127.0.0.1:8000/signup/ 
 
