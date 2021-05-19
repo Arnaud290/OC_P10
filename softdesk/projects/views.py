@@ -41,8 +41,8 @@ class ProjectList(generics.ListCreateAPIView):
 
 class ProjectDetail(generics.RetrieveUpdateDestroyAPIView):
     """
-    Class de vue de detail d'un projet,
-    l'utilisateur doit etre l'auteur du projet
+    Detail view class of a project,
+    the user must be the author of the project
     """
     serializer_class = serializers.ProjectSerializer
     queryset = Project.objects.all()
